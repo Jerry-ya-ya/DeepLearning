@@ -17,7 +17,7 @@ pathlib.WindowsPath = pathlib.PosixPath
 
 MODEL_PATH = os.getenv(
     "MODEL_PATH",
-    "/models/Human_Face_Emotions/demo_stage-3.pkl"
+    "models/Human_Face_Emotions/demo_stage-3.pkl"
 )
 
 UPLOAD_DIR = Path("static/uploads")
@@ -32,7 +32,6 @@ learn = load_learner(MODEL_PATH, cpu=True)
 model = learn.model
 model.eval()
 
-
 def find_last_conv_layer(model):
     last_conv = None
     for module in model.modules():
@@ -42,9 +41,7 @@ def find_last_conv_layer(model):
         raise RuntimeError("找不到 Conv2d layer，無法產生 Grad-CAM")
     return last_conv
 
-
 target_layer = find_last_conv_layer(model)
-
 
 def generate_gradcam(image_path):
     img = Image.open(image_path).convert("RGB")
@@ -113,7 +110,6 @@ def generate_gradcam(image_path):
 
     return result_path, pred_label, confidence
 
-
 @app.route("/", methods=["GET", "POST"])
 def index():
     result_url = None
@@ -137,7 +133,6 @@ def index():
         label=label,
         confidence=confidence
     )
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

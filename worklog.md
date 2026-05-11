@@ -5,3 +5,5 @@
 - Connect project to remote Git repository.
 
 - Add Flask API for image recognition.
+
+- Enhance image recognition page UI.
