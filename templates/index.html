@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Grad-CAM Demo</title>
+</head>
+<body>
+    <h1>Human Face Emotion Grad-CAM</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">上傳並分析</button>
+    </form>
+
+    {% if result_url %}
+        <hr>
+
+        <h2>預測結果</h2>
+        <p>類別：{{ label }}</p>
+        <p>信心分數：{{ "%.2f"|format(confidence * 100) }}%</p>
+
+        <h2>Grad-CAM 結果</h2>
+        <img src="{{ result_url }}" width="400">
+    {% endif %}
+</body>
+</html>
