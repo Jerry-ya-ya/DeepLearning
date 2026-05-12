@@ -7,3 +7,5 @@
 - Add Flask API for image recognition.
 
 - Enhance image recognition page UI.
+
+- Separated the main website application for deployment to Hugging Face.
