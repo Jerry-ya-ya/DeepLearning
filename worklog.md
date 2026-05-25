@@ -13,3 +13,5 @@
 ## 2026/05/14
 
 - Update training workflow to 2 training phases + 1 fine-tune and record training logs.
+
+- Train YOLO26 human detection model and rewrite README.

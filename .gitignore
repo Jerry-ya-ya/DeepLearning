@@ -22,12 +22,14 @@ test_set/*
 models/models/
 *.pth
 *.pt
+!best.pt
+
+train_batch*.jpg
 
 # YOLO
 yolov7/
 
 # Training Outputs
-runs/
 wandb/
 logs/
 *.cache
