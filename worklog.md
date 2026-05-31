@@ -14,4 +14,8 @@
 
 - Update training workflow to 2 training phases + 1 fine-tune and record training logs.
 
+## 2026/05/25
+
 - Train YOLO26 human detection model and rewrite README.
+
+- Add Grad-CAM chapter.

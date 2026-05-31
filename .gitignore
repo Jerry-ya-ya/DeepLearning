@@ -40,3 +40,6 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+
+runs/detect/predict*
+runs/detect/val*
